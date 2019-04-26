@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scene/Bullet/Bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/Bullet/towertestBullet.gd" type="Script" id=2]
+[ext_resource path="res://resource/kenney_medievalrtspack/PNG/Retina/Structure/medievalStructure_12.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[node name="Bullet" instance=ExtResource( 1 )]
+scale = Vector2( 3.85827, 3.85827 )
+script = ExtResource( 2 )
+speed = 3000
+damage = 20
+liftime = 1.0
+
+[node name="Sprite" parent="." index="0"]
+rotation = 1.57079
+scale = Vector2( 0.340083, 0.340083 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+rotation = 1.5708
+scale = Vector2( 0.816362, 0.816362 )
+shape = SubResource( 1 )
+

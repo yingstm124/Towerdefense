@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/160830__kast6453__forest(game).wav-10fe40877e33834bdf1ceeec283728b1.sample"
+
+[deps]
+
+source_file="res://resource/sound/160830__kast6453__forest(game).wav"
+dest_files=[ "res://.import/160830__kast6453__forest(game).wav-10fe40877e33834bdf1ceeec283728b1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

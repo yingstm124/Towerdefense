@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://resource/bg.png" type="Texture" id=1]
+[ext_resource path="res://font/PrintAble4U Bold ver 1.00.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scene/FirstGUI/text.gd" type="Script" id=3]
+[ext_resource path="res://resource/sound/160830__kast6453__forest(game).wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_color = Color( 1, 0.952941, 0.952941, 1 )
+font_data = ExtResource( 2 )
+
+[node name="story mode" type="Control"]
+modulate = Color( 0.278431, 0.278431, 0.278431, 1 )
+light_mask = 65537
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -6.43659
+margin_top = -8.1264
+margin_right = -6.43658
+margin_bottom = -8.1264
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 4.49097, -1.79639 )
+scale = Vector2( 1.31222, 1.54073 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="text" type="RichTextLabel" parent="."]
+modulate = Color( 1, 0.905882, 0.905882, 1 )
+self_modulate = Color( 0.203922, 0.0941176, 0.0941176, 1 )
+light_mask = 15
+margin_left = 113.408
+margin_top = 227.553
+margin_right = 951.408
+margin_bottom = 440.553
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.980392, 0.980392, 0.980392, 1 )
+custom_colors/selection_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "fjsdkjfkldsjklf"
+text = "fjsdkjfkldsjklf"
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.09
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="text" method="_on_Timer_timeout"]

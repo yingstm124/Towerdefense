@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="selecttower" type="Control"]
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -148.448
+margin_top = -100.018
+margin_right = 148.552
+margin_bottom = 112.982
+

@@ -1,0 +1,59 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scene/FirstGUI/First.gd" type="Script" id=1]
+[ext_resource path="res://resource/UI/menu/UI1.png" type="Texture" id=2]
+[ext_resource path="res://resource/UI/menu/UI2.png" type="Texture" id=3]
+[ext_resource path="res://resource/UI/menu/UI3.png" type="Texture" id=4]
+[ext_resource path="res://resource/UI/menu/UI4.png" type="Texture" id=5]
+[ext_resource path="res://resource/UI/menu/UI5.png" type="Texture" id=6]
+[ext_resource path="res://resource/UI/menu/UI6.png" type="Texture" id=7]
+[ext_resource path="res://resource/buttonGUI/1.png" type="Texture" id=8]
+[ext_resource path="res://resource/buttonGUI/4.png" type="Texture" id=9]
+[ext_resource path="res://resource/buttonGUI/5.png" type="Texture" id=10]
+[ext_resource path="res://resource/buttonGUI/6.png" type="Texture" id=11]
+[ext_resource path="res://resource/buttonGUI/7.png" type="Texture" id=12]
+[ext_resource path="res://resource/sound/peritune-strategy5(title).wav" type="AudioStream" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="AnimatedTexture" id=2]
+flags = 4
+frames = 4
+frame_0/texture = ExtResource( 9 )
+frame_1/texture = ExtResource( 10 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 11 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 12 )
+frame_3/delay_sec = 5.33
+
+[node name="First" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="BG" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 3
+playing = true
+centered = false
+
+[node name="play" type="TextureButton" parent="."]
+margin_left = 138.174
+margin_top = 212.341
+margin_right = 338.174
+margin_bottom = 412.341
+texture_normal = ExtResource( 8 )
+texture_pressed = SubResource( 2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 13 )
+autoplay = true
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
